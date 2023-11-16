@@ -13,16 +13,16 @@ char *getpath(char *command)
 	while (token != NULL)
 	{
 
-		char *full_path = (char *)malloc(strlen(token) + 1 + strlen(command) + 1);
+		char *full_path = (char *)malloc(strlen(token) + 1 + _strlen(command) + 1);
 
 		if (full_path == NULL)
 		{
 			perror("Memory allocation error");
 			exit(1);
 		}
-		strcpy(full_path, token);
-		strcat(full_path, "/");
-		strcat(full_path, command);
+		_strcpy(full_path, token);
+		_strcat(full_path, "/");
+		_strcat(full_path, command);
 
 		if (access(full_path, X_OK) == 0)
 		{
