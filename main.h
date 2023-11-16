@@ -9,7 +9,8 @@
 #include <string.h>
 #include <errno.h>
 extern char **environ;
-struct builtin {
+struct builtin
+{
 	char *name;
 	int (*func)(char **args);
 };
@@ -23,7 +24,7 @@ void execmd(char **argv);
 int help(char **args);
 int changedir(char **args);
 int shell_exit(char **args);
-int num_builtins();
+int num_builtins(void);
 void executeChildProcess(char **argv);
 void handleParentProcess(pid_t child);
 int _strlen(char *s);
